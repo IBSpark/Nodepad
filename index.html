@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lined Notepad</title>
+
+
+  <!-- style sheet -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="notepad">
+    <div class="header">
+      <!-- Undo Redo -->
+      <button onclick="document.execCommand('undo')">↶</button>
+      <button onclick="document.execCommand('redo')">↷</button>
+
+      <!-- Font Family -->
+      <select id="fonts" onchange="setfonts(this)">
+        <option>Roboto</option>
+        <option>Verdana</option>
+        <option>Arial</option>
+        <option>Calibri</option>
+        <option>Candara</option>
+        <option>Forte</option>
+        <option>Elephant</option>
+      </select>
+
+      <!-- Font Size -->
+      <select id="size" onchange="setsize(this)">
+        <option>12px</option>
+        <option>14px</option>
+        <option selected>16px</option>
+        <option>18px</option>
+        <option>20px</option>
+      </select>
+
+      <!-- Text Color -->
+      <input type="color" id="txtcolor" onchange="settextcolor(this)" />
+
+      <!-- Bold Italic Underline -->
+      <button onclick="document.execCommand('bold')"><b>B</b></button>
+      <button onclick="document.execCommand('italic')"><i>I</i></button>
+      <button onclick="document.execCommand('underline')"><u>U</u></button>
+
+      <!-- Align Group with Heading (centered) -->
+      <div class="align-container">
+        <div class="align-label">Alignment</div>
+        <div class="align-group">
+          <button onclick="document.execCommand('justifyLeft')">⯇</button>
+          <button onclick="document.execCommand('justifyCenter')">≡</button>
+          <button onclick="document.execCommand('justifyRight')">⯈</button>
+          <button onclick="document.execCommand('justifyFull')">☰</button>
+        </div>
+      </div>
+
+      <!-- Save Options -->
+      <button onclick="saveFile()">💾 Save</button>
+      <button onclick="saveAsFile()">📂 Save As</button>
+    </div>
+
+    <!-- Editable area -->
+    <div class="txt1" id="txt1" contenteditable="true"></div>
+
+    <footer>📒  Notepad </footer>
+  </div>
+
+
+  <!-- Script -->
+
+  <script src="main.js"></script>
+</body>
+</html>
